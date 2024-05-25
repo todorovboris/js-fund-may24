@@ -1,1 +1,1 @@
-# Java Basics 2024
+# JavaScript Fundamentals 2024
