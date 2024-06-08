@@ -9,7 +9,7 @@ function exe(arr1, arr2){
         }
     }
 
-    console.log(arrMerg);
+    console.log(arrMerg.join(" - "));
 }
 
 // exe(['5', '15', '23', '56', '35'],
