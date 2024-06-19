@@ -5,7 +5,11 @@ const numsArr = [14, 5, 6, 2, 10, 55, 1, 310];
 // strArr.sort((a, b) => b.localeCompare(a));
 
 // numsArr.sort((a, b) => a - b);
-numsArr.sort((a, b) => b - a);
+// numsArr.sort((a, b) => b - a);
+
+for(let item of numsArr){
+    console.log(item);
+}
 
 console.log(strArr);
 console.log('-----------');
