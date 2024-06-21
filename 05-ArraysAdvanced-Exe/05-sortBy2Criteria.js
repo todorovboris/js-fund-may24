@@ -1,10 +1,9 @@
 function sortBy2Criteria(arr) {
-    const resultArr = arr.sort();
+    let arrOrdered = arr.sort();
+    let resultArr = arrOrdered.sort((a, b) => a.length - b.length);
 
-    // for (let string of arr) {
-
-    // }
-    console.log(resultArr);
+    console.log(resultArr.join('\n'));
 }
 
-sortBy2Criteria(['alpha', 'beta', 'gamma']);
+// sortBy2Criteria(['alpha', 'beta', 'gamma']);
+sortBy2Criteria(['Isacc', 'Theodor', 'Jack', 'Harrison', 'George']);
