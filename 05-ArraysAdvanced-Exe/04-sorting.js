@@ -4,8 +4,8 @@ function sorting(arr) {
     // console.log(arrSorted);
 
     while (arrSorted.length > 0) {
-        resultArr.push(arr.shift());
-        resultArr.push(arr.pop());
+        resultArr.push(arr.shift()); //take the first element;
+        resultArr.push(arr.pop()); //take the last element;
     }
 
     console.log(resultArr.join(' '));
