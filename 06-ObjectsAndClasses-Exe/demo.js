@@ -4,6 +4,6 @@ const finalProducts = [
     { id: 3, name: 'Jim' },
 ];
 
-const found = finalProducts.find((user) => user.id === 2);
+finalProducts.sort((a, b) => b.id - a.id);
 
-console.log(found);
+console.log(finalProducts);
