@@ -10,11 +10,11 @@ function lab(arr) {
         adressBook[name] = adress;
     }
 
-    let adressBookSorted = Object.entries(adressBook);
-    adressBookSorted.sort((a, b) => a[0].localeCompare(b[0]));
-    // console.log(adressBookSorted);
+    let adressBookArr = Object.entries(adressBook);
+    let adressBookArrSorted = adressBookArr.sort((a, b) => a[0].localeCompare(b[0]));
+    // console.log(adressBookArrSorted);
 
-    for (const person of adressBookSorted) {
+    for (const person of adressBookArrSorted) {
         console.log(`${person[0]} -> ${person[1]}`);
     }
 }
