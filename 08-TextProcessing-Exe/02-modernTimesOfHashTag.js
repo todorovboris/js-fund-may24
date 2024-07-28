@@ -8,7 +8,7 @@ function solve(str) {
             let validWord = word.substring(1);
 
             if (regex.test(validWord)) {
-                console.log(validWord);
+                console.log(validWord); //тества дали думата има само главни или малки букви и ако е вярно отпечатва думата
             }
         }
     }
