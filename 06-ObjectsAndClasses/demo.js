@@ -1,6 +1,6 @@
 // СТРУКТУРА
 let obj1 = {
-    x: 5, // "key: value" -> целият ред наричаме property
+    x: 'softuni', // "key: value" -> целият ред наричаме property
     y: 6, // "key: value" -> целият ред наричаме property
     z: true,
     v: undefined,
@@ -14,7 +14,17 @@ let obj1 = {
         console.log(message); //functions in Objects we call method
     },
 };
+console.log(Object.keys(obj1)); // връща масив, с ключовете на обекта, като ел. на масив;
+console.log(Object.values(obj1)); // връща масив, със стойностите на ключовете на обекта, като ел. на масив;
+console.log(Object.entries(obj1)); // създава матрица, в която всеки ключ-стойност са елементи на отделни масиви ;
+console.log(Object.entries(obj1)[0]); // връща масивът, който е на 0ва позиция в големия масив -> ключ "х" и ел. "softuni"
+
+// ОБХОЖДАНЕ на ВСЕКИ КЛЮЧ (може да се направо АНАЛОГИЧНО със стойностите);
+for (const key of Object.keys(obj1)) {
+    console.log(`${key} -> ${obj1[key]}`);
+}
 console.log('-------------------');
+console.log('');
 
 //-------------------------------------------------------------------------------------------------
 
@@ -26,6 +36,7 @@ console.log(obj1[property]); // v2.0 - използва се за динамич
 console.log(obj1.sum());
 obj1.speak('My name is Boris');
 console.log('-------------------');
+console.log('');
 
 //-------------------------------------------------------------------------------------------------
 
@@ -47,6 +58,7 @@ function personInfo1(firstName, lastName, age) {
     person1.age = age;
     return person1;
 }
+console.log('');
 
 // v2.2 - ДОБАВЯНЕ на ключ със стойност към обекет
 function personInfo2(firstName, lastName, age) {
@@ -60,15 +72,88 @@ function personInfo2(firstName, lastName, age) {
 
 console.log(personInfo1('Boris', 'Todorov', 32));
 console.log(personInfo2('Todor', 'Borisov', 65));
-console.log('-------------------');
+console.log('');
 
 // v3.0 - динамично ДОБАВЯНЕ на ключ със стойност към обекет
 let catNames = ['Tom', 'Garfield', 'Charly'];
 let cat = {};
-catNames.forEach((name) => (cat[name] = 0)); // здаваме в обекта cat нови ключове, използвайки динамично елемнтите на масива catNames;
+catNames.forEach((name) => (cat[name] = 0)); // задаваме в обекта cat нови ключове, използвайки динамично елемнтите на масива catNames;
 console.log(cat);
 console.log('-------------------');
+console.log('');
 
 //-------------------------------------------------------------------------------------------------
 
-// Функции при обектите -> или както се наричат МЕТОДИ
+// Функции (МЕТОДИ)
+
+// ДЕФИНИРАНЕ
+let speakObj = {
+    // 1)
+    speak: function () {
+        console.log('hello!');
+    },
+    // 2)
+    speak2() {
+        console.log('hello! 2');
+    },
+    // 3)
+    speak3: () => {
+        console.log('hello! 3');
+    },
+};
+speakObj.speak();
+speakObj.speak2();
+speakObj.speak3();
+console.log('-------------------');
+console.log('');
+
+// ДОБАВЯНЕ на методи КЪМ обекти
+const names = {};
+// 1)
+names.speak = function () {
+    console.log('boris');
+};
+// 2)
+names.speak2 = () => console.log('todorov');
+
+names.speak();
+names.speak2();
+console.log('-------------------');
+console.log('');
+
+//-------------------------------------------------------------------------------------------------
+
+// КЛАСОВЕ - темплейт за обектите;
+
+// Дефиниране:
+class Car {
+    constructor(model, year) {
+        this.model = model;
+        this.year = year;
+    }
+
+    present() {
+        console.log(`Hi! ${this.model}`); // МЕТОД в класовете
+    }
+}
+
+const audi = new Car('RS7', 2023); // създаваме нов обект чрез създадения клас
+const bmw = new Car('M5', 2024);
+bmw.present(); // извикване на МЕТОДА
+console.log(audi);
+
+console.log('-------------------');
+console.log('');
+
+//-------------------------------------------------------------------------------------------------
+
+// JSON - обект, при който ключовете и стойностите са в двойна кавичка:
+
+let objPerson = {
+    name: 'Boris',
+    age: 32,
+    adress: 'Sofia',
+};
+
+console.log(JSON.stringify(objPerson)); //                                   конвертиране на ОБЕКТ КЪМ json
+console.log(JSON.parse(`{"name":"Boris","age":32,"adress":"Sofia"}`)); //    конвертиране на JSON КЪМ обект;

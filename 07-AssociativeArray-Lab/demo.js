@@ -27,13 +27,19 @@ let arr = Array.from(map.entries()); //връща всяка двойка key-va
 let keys = Array.from(map.keys()); //връща всички key в масив;
 let values = Array.from(map.values()); //връща всички value в масив;
 
+/// --------------------------------------------------------------------------------
+
+// нначин1 за обхождане и принтиране на мапа
 for (const key1 of keys) {
     console.log(`${key1} => ${map.get(key1)}`);
-} // нначин1 за обхождане и принтиране на мапа
+}
 console.log('----------');
+// нначин2 за обхождане и принтиране на мап
 for (const [key2, value] of map) {
     console.log(`${key2} => ${value}`);
-} // нначин2 за обхождане и принтиране на мап
+}
+
+/// --------------------------------------------------------------------------------
 
 let sorted = Array.from(map.entries()).sort((a, b) => a[1] - b[1]); //сортиране по ключ
 for (const kvp of sorted) {
