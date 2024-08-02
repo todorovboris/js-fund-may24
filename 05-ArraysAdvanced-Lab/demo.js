@@ -55,7 +55,7 @@ console.log('');
 const arrNames = ['Boris', 'Marina', 'Stoyan', 'Geno'];
 const arrNumsStr = ['1', '2', '3', '4'];
 
-// map() - съзздава нов масив, като му прилага някаква функция;
+// map() - съзздава нов масив, като трансоформира всички елементи от оригиналния;
 console.log('Оригиналният масив: ', arrNames);
 const callbackFun = (x) => x.length;
 console.log('.map((x) => x.length)            ВРЪЩА -> ', arrNames.map(callbackFun));
